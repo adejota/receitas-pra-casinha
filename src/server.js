@@ -6,7 +6,13 @@ const methodOverride = require('method-override')
 const server = express()
 
 server.use(express.urlencoded({ extended: true }))
-server.use(express.static('public'))
+
+// Desenvolvimento
+/* server.use(express.static('public')) */
+
+// Produção
+server.use(express.static(path.join(__dirname, 'public')));
+
 server.use(methodOverride('_method'))
 server.use(routes)
 
