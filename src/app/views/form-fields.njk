@@ -1,0 +1,86 @@
+<div id="form-fields">
+
+    <section class="details">
+
+        <div class="item photo">
+
+            <img src="{{recipe.photo}}" class="preview-img">
+
+            <input type="file" name="photo" id="file" class="inputfile" accept="image/*"
+                value="{{recipe.photo}}">
+        </div>
+
+        <section class="informations">
+
+            <div class="item">
+                <div>Título</div>
+                <div>
+                    <input type="text" name="title" placeholder="Nome da receita" required="required"
+                        value="{{recipe.title}}">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Cozinheiro</div>
+                <div>
+                    <input type="text" name="cooker" placeholder="Quem criou a receita?" required="required"
+                    value="{{recipe.cooker}}">
+
+                </div>
+            </div>
+
+            <div class="item time-portions">
+                <div class="item">
+                    <span>
+                        Tempo de preparo
+                    </span>
+                    <div class="container">
+                        <input type="number" name="time" placeholder="" required="required"
+                        value="{{recipe.time}}">
+                        <span>minutos</span>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <span>Rendimento</span>
+                    <div class="container">
+                        <input type="number" name="portions" required="required"
+                        value="{{recipe.portions}}">
+                        <span>porções</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </section>
+
+    <section class="ingredients-preparation">
+
+        <div class="item">
+            <div>Ingredientes</div>
+            <div>
+                <textarea name="ingredients" cols="30" rows="10" class="textArea" placeholder='Separe os ingredientes por ponto e virgula ";"' required="required"
+                >{{recipe.ingredients}}</textarea>
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Modo de preparo</div>
+            <div>
+                <textarea name="preparation" cols="30" rows="10" class="textArea" placeholder='Separe os ingredientes por ponto e virgula ";"' required="required"
+                >{{recipe.preparation}}</textarea>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="item">
+        <div>Dicas</div>
+        <div>
+            <textarea name="tips" cols="30" rows="10" class="textArea" placeholder="Dê algumas dicas adicionais"
+            >{{recipe.tips}}</textarea>
+        </div>
+    </div>
+
+</div>

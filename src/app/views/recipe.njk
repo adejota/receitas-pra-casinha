@@ -1,0 +1,91 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      
+    <title>{{recipe.title}} - receitas pra casinha</title>
+{% endblock head %}
+
+{% block content %}
+    <div id="home">
+        
+        <main id="recipe">
+
+            <div class="card" >
+                <img src="{{recipe.photo}}" alt="{{recipe.title}}">
+
+                <div class="header">
+                    <h3>{{recipe.title}}</h3>
+                    <p>por {{recipe.cooker}}</p>
+                    <div class="time-portions">
+
+                        <span>Tempo de preparo</span>
+                        {% if recipe.time == 1 %}
+                            <p>{{recipe.time}} minuto</p>
+                        {% else %}
+                            <p>{{recipe.time}} minutos</p>
+                        {% endif %}
+
+                        <span>Rendimento</span>
+                        {% if recipe.portions == 1 %}
+                            <p>{{recipe.portions}} porção</p>
+                        {% else %}
+                            <p>{{recipe.portions}} porções</p>
+                        {% endif %}
+                        
+                    </div>
+                </div>
+            </div>
+
+
+        
+            <div id="details">
+                <div class="recipe-ingredients">
+                    <h1>Ingredientes</h1>
+                    <span>ESCONDER</span>
+                    <ul>
+                        {% for ingredient in recipe.ingredients %}
+                            <li> {{ingredient}} </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="recipe-preparation">
+                    <h1>Modo de preparo</h1>
+                    <span>ESCONDER</span>
+                    <ul>
+                        {% for preparation in recipe.preparation %}
+                            <li> {{preparation}} </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="recipe-information">
+                    <h1>Dicas</h1>
+                    <span>ESCONDER</span>
+                    <ul>
+                        <p>{{recipe.tips}}</p>
+                    </ul>
+                </div>
+
+            </div>
+
+        </main>
+
+        <div id="btn-wrapper">
+            <a href="/recipes/{{recipe.id}}/edit" class="edit button">
+                Editar
+            </a>
+
+            <form id="form-delete" action="/recipes?_method=DELETE" method="POST">
+                <input type="hidden" name="id" value={{recipe.id}}>
+                <button type="submit" class="delete button">Deletar</button>
+            </form>
+        </div>
+
+    </div>
+
+{% include 'confirmation.njk' %}
+
+{% endblock content %}

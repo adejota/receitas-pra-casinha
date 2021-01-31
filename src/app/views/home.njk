@@ -1,0 +1,52 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div id="home">
+
+        <main>
+
+            <div class="wrapper">
+
+                <div class="container">
+                    <h1>Site de receitas colaborativo</h1>
+                    <p>Fique a vontade para compartilhar ou pesquisar receitas 😋</p>
+                </div>
+
+                <img src="https://image.flaticon.com/icons/svg/2722/2722127.svg" alt="Imagem Compartilhe Receitas">
+
+            </div>
+
+            <div id="last-seen">
+
+                <h2>Últimas receitas</h2>
+
+                <div id="cards-container">
+
+                    {% for recipe in recipes %}
+                        <a href="/recipes/{{recipe.id}}">
+                            <div class="card">
+                                <img src="{{recipe.photo}}" alt="Foto de {{recipe.title}}">
+                                <h3>{{recipe.title}}</h3>
+                                <p>por
+                                    {{recipe.cooker}}</p>
+                            </div>
+                        </a>
+                    {% else %}
+                        <div class="empty-block">
+                            <p>Nenhuma receita recente</p>
+                        </div>
+                    {% endfor %}                    
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+{% endblock content %}
+
+</body>
+</html>

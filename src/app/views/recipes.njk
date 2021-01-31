@@ -1,0 +1,63 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Receitas - receitas pra casinha</title>
+{% endblock head %}
+
+{% block header %}
+</head>
+<body>
+
+    <header id="filter">
+
+        <div class="flex-container">
+            <a href="/"><img src="/assets/logo.png" alt="Logomarca Receitas pra Casinha"></a>
+            <a href="/about">Sobre</a>
+            <a href="/recipes">Todas as receitas</a>
+        </div>
+
+        <div class="flex-container">
+            <form action="/recipes" method="GET">
+                <div class="filter-container">
+                    <input type="text" name="filter" placeholder="Nome da receita" value={{filter}}>
+                    <button type="submit">Buscar</button>
+                </div>
+            </form>
+            <a href="/share-recipe" class="margin">
+                <button>Nova receita</button>
+            </a>
+        </div>
+    </header>
+{% endblock header %}
+
+{% block content %}
+    <div id="home">
+
+        <main>
+
+            <div id="last-seen">
+
+                <div id="cards-container">
+                    {% for recipe in recipes %}
+                        <a href="/recipes/{{ recipe.id }}">
+                            <div class="card" id="">
+                                <img src="{{recipe.photo}}" alt="{{recipe.title}}">
+                                <h3>{{recipe.title}}</h3>
+                                <p>por
+                                    {{recipe.cooker}}</p>
+                            </div>
+                        </a>
+
+                    {% else %}
+                        <div class="empty-block">
+                            <p>Nenhuma receita</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </main>
+    </div>
+
+{% endblock content %}

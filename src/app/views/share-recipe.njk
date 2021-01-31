@@ -1,0 +1,23 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Compartilhe - receitas pra casinha</title>
+{% endblock head %}
+
+{% block content %}
+
+    <div id="share-recipe">
+
+        <form class="recipe" method="POST" action="/recipes" enctype="multipart/form-data">
+
+            <h3>Nova receita</h3>
+
+            {% include 'form-fields.njk' %}
+            
+            <button type="submit">Compartilhar</button>
+
+        </form>
+
+    </div>
+
+{% endblock content %}

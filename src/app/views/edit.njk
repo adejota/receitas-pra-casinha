@@ -1,0 +1,25 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Editar - receitas pra casinha</title>
+{% endblock head %}
+
+{% block content %}
+
+    <div id="share-recipe">
+
+        <form class="recipe" method="POST" action="/recipes?_method=PUT" enctype="multipart/form-data">
+
+            <h3>Editar Receita</h3>
+
+            {% include 'form-fields.njk' %}
+
+            <input type="hidden" name="id" value={{recipe.id}}>
+            
+            <button type="submit">Salvar</button>
+
+        </form>
+
+    </div>
+
+{% endblock content %}
