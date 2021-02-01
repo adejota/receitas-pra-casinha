@@ -3,7 +3,7 @@ const routes = express.Router()
 const recipes = require("./app/controllers/recipes")
 const upload = require('./storage')
 
-routes.get("/", recipes.home)
+routes.get("/", recipes.index)
 routes.get("/recipes", recipes.recipes)
 routes.get("/about", recipes.about)
 routes.get("/share-recipe", recipes.shareRecipe)

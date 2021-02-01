@@ -3,11 +3,11 @@ const Recipe = require('../models/Recipe')
 const multer = require('multer')
 
 module.exports = {
-    home(req, res) {
+    index(req, res) {
 
         Recipe.all(function(recipes) {
             var lastThree = recipes.slice(-3)
-            return res.render("home", { recipes: lastThree } )
+            return res.render("index", { recipes: lastThree } )
         })
 
     },

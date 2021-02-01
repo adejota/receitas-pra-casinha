@@ -1,9 +1,14 @@
 const express = require("express")
+const path = require('path')
+const hike = require('./routes/hike')
 const nunjucks = require("nunjucks")
 const routes = require("./routes")
 const methodOverride = require('method-override')
 
+
 const server = express()
+server.get('/hikes', hike.index);
+server.post('/add_hike', hike.add_hike);
 
 server.use(express.urlencoded({ extended: true }))
 
