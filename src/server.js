@@ -1,5 +1,4 @@
 const express = require("express")
-const path = require('path')
 const nunjucks = require("nunjucks")
 const routes = require("./routes")
 const methodOverride = require('method-override')
@@ -12,7 +11,7 @@ server.use(express.urlencoded({ extended: true }))
 /* server.use(express.static('public')) */
 
 // Produção
-server.use(express.static(path.join(__dirname, 'public')));
+server.use(express.static(join(__dirname, 'public')));
 
 server.use(methodOverride('_method'))
 server.use(routes)
