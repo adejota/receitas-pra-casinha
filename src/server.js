@@ -1,14 +1,10 @@
 const express = require("express")
 const path = require('path')
-const hike = require('./routes/hike')
 const nunjucks = require("nunjucks")
 const routes = require("./routes")
 const methodOverride = require('method-override')
 
-
 const server = express()
-server.get('/hikes', hike.index);
-server.post('/add_hike', hike.add_hike);
 
 server.use(express.urlencoded({ extended: true }))
 
@@ -29,7 +25,7 @@ nunjucks.configure("src/app/views", {
     noCache: true
 })
 
-const port = process.env.port || 5000;
+const port = process.env.port || 3000;
 server.listen(port, function(req, res) {
     console.log("server is running")
 })
