@@ -25,7 +25,7 @@ nunjucks.configure("src/app/views", {
     noCache: true
 })
 
-const port = process.env.port || 3000;
+const port = process.env.port || 8081;
 server.listen(port, function(req, res) {
     console.log("server is running")
 })
