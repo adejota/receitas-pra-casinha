@@ -6,7 +6,7 @@ module.exports = {
     index(req, res) {
 
         Recipe.all(function(recipes) {
-            var lastThree = recipes.slice(-3)
+            var lastThree = recipes.slice(0, 3)
             return res.render("index", { recipes: lastThree } )
         })
 

@@ -8,10 +8,10 @@ const server = express()
 server.use(express.urlencoded({ extended: true }))
 
 // Desenvolvimento
-/* server.use(express.static('public')) */
+server.use(express.static('public'))
 
 // Produção
-server.use(express.static(join(__dirname, 'public')));
+/* server.use(express.static(join(__dirname, 'public'))); */
 
 server.use(methodOverride('_method'))
 server.use(routes)
