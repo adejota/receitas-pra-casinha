@@ -2,7 +2,7 @@
   "name": "receitas-pra-casinha",
   "version": "1.0.0",
   "description": "Site de receitas colaborativo",
-  "main": "src/server.js",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon src/server.js"
   },
