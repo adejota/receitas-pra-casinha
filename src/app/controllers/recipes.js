@@ -22,8 +22,8 @@ module.exports = {
         Recipe.find(req.params.id, function(recipe) {
             if (!recipe) return res.send("Hmm, não achei essa receita!")
 
-            recipe.ingredients = recipe.ingredients.split(";")
-            recipe.preparation = recipe.preparation.split(";")
+            recipe.ingredients = recipe.ingredients.trim().split(";")
+            recipe.preparation = recipe.preparation.trim().split(";")
 
             return res.render("recipe", { recipe } )
         })
