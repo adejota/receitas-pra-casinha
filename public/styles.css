@@ -92,10 +92,13 @@ header .flex-container {
 }
 
 .filter-container input {
+    background-color: var(--primary-color);
+    color: white;
+
     outline: none;
     border: none;
-    border-radius: 6px;
-    padding: 6px;
+    border-bottom: 1px solid white;
+
 }
 
 .filter-container input::placeholder {
