@@ -35,7 +35,7 @@ module.exports = {
             data.data.ingredients,
             data.data.preparation,
             data.data.tips,
-            data.data.photo = "/public/assets/photos/" + data.file.filename
+            data.data.photo = "/assets/photos/" + data.file.filename
         ]
 
         db.query(query, values, function(err, results, fields) {
@@ -122,7 +122,7 @@ module.exports = {
                 data.data.ingredients,
                 data.data.preparation,
                 data.data.tips,
-                data.data.photo = "/public/assets/photos/" + data.file.filename,
+                data.data.photo = "/assets/photos/" + data.file.filename,
                 data.data.id
             ]
         }
