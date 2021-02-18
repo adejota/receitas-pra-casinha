@@ -1,5 +1,5 @@
 const express = require("express")
-var path = require('path');
+var path = require('path')
 const nunjucks = require("nunjucks")
 const routes = require("./routes")
 const methodOverride = require('method-override')
